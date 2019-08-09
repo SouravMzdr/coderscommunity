@@ -2,13 +2,66 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { NewQuestionComponent } from './questions/new-question/new-question.component';
+import { QuestionListComponent } from './questions/question-list/question-list.component';
+import { QuestionDetailComponent } from './questions/question-detail/question-detail.component';
+import { AnswerListComponent } from './answers/answer-list/answer-list.component';
+import { NewAnswerComponent } from './answers/new-answer/new-answer.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
+
+import { environment } from 'src/environments/environment';
+
+import { AppRoutingModule } from './app-routing.module';
+
+//Angular Firebase
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule} from '@angular/fire/auth';
+import { LoadingAnimationComponent } from './ui/loading-animation/loading-animation.component';
+import { QuestionComponent } from './questions/question/question.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
+import { MarkdownModule } from 'ngx-markdown';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ 
+import { ToastrModule } from 'ngx-toastr';
+import { ShortenPipe } from './pipe/shorten.pipe';
+import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewQuestionComponent,
+    QuestionListComponent,
+    QuestionDetailComponent,
+    AnswerListComponent,
+    NewAnswerComponent,
+    NavbarComponent,
+    LoadingAnimationComponent,
+    QuestionComponent,
+    ShortenPipe,
+    FooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    MarkdownModule.forRoot(),
+    MDBBootstrapModule.forRoot(),
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot() 
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

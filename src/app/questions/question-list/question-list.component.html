@@ -1,0 +1,53 @@
+<!-- <app-intro></app-intro> -->
+<app-new-question></app-new-question>
+
+
+<div *ngIf="showLoadingAnimation; then loading else content">
+</div>
+
+<ng-template #loading>
+        <app-loading-animation></app-loading-animation>
+</ng-template>
+
+<ng-template #content>
+        <div class="container">
+
+                <div class="row">
+                                <div class="col btn-group">
+                                                <button type="button" class="btn btn-outline-info waves-effect " (click)="onSelectTag()"> ALL</button>                
+                                </div>
+                                <div class="col btn-group" *ngFor = "let tag of  questionTag; let i = index">
+                                        <button type="button" class="btn btn-outline-info waves-effect" (click)="onSelectTag(i)" > {{ tag }}</button>                
+                                </div>
+                
+                </div>
+                <div class="row ">
+                        <!--  -->
+                        <div class="col">
+                                <div class="card" *ngFor = "let question of list"> 
+                                        <br>
+                                        
+                                        <div class="card-body">
+                                                <h5 (click)="onSelect(question.id)" class="card-title">{{ question.questionTitle }}</h5>
+                                                <p (click)="onSelect(question.id)" class="card-text">{{ question.questionBody | shorten }}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                                <mdb-badge pill="true" primary="true" *ngFor="let tag of question.questionSelTags">{{tag}}</mdb-badge>
+        
+                                                <small (click)="onSelect(question.id)" class="float-right">&ensp;{{ question.questionDate | date }}</small>
+                                                <h6> <span (click)="onSelect(question.id)" class="badge badge-info float-right">{{ question.questionUserId  }}</span> </h6>
+                                        </div>
+                                        <br>
+                                </div>  
+                                <ng-container *ngIf='list.length==0'>
+                                                <h4> No Question is asked on this topic YET. </h4>
+                                        </ng-container>             
+                        </div>       
+                </div>
+                        
+                </div>
+</ng-template>
+
+
+
+

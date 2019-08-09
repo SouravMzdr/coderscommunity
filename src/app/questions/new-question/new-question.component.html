@@ -1,0 +1,61 @@
+<div class="container" *ngIf="auth.user$ | async; then authenticated else guest">
+
+</div>
+
+<ng-template #guest>
+    <h4 class="white-text my-4">Please SignIn to ask new Question</h4>
+</ng-template>
+<!-- User logged in -->
+<ng-template #authenticated>
+    <button mdbBtn type="button" color="primary" mdbWavesEffect (click)="askQuestion()">Ask new Question</button>
+</ng-template>
+
+
+
+<!--Mask-->
+<div id="intro" class="view">
+
+        <div class="mask rgba-black-strong">
+    
+            <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+    
+                <div class="row d-flex justify-content-center text-center">
+    
+                    <div class="col-md-10">
+    
+                        <!-- Heading -->
+                        <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">Welcome</h2>
+    
+                        <!-- Divider -->
+                        <hr class="hr-light">
+    
+                        <!-- Description -->
+
+                        
+                        <h4 class="white-text my-4">
+                            Stuck in some code? Cant find your way out? Dont worry, you can ask your questions 
+                            here and someone will answer.Or you can help others and contribute towards making a helpful community. 
+                        </h4>
+                        <div class="container" *ngIf="auth.user$ | async; then authenticated else guest">
+
+                        </div>
+                        <br><br>
+
+                        <h4 class="white-text my-4">Scroll  Down to Get Started.</h4>
+
+                        <h1 class="white-text my-1">
+                            <i class="fas fa-angle-double-down "></i>
+    
+                        </h1>
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    
+    </div>
+    <!--/.Mask-->
+          

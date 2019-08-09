@@ -1,0 +1,35 @@
+<div class="container" *ngIf = 'signInMessage'>
+    <p>Please Sign in to post new answer</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col" *ngIf="auth.user$ | async as user">
+            <form [formGroup]="answerForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    
+                    <br>
+                    <label for="Answer Body" >Write Answer</label>
+                    <textarea type="textarea"
+                     rows="10"
+                     class="form-control"
+                     formControlName="answerBody"
+                     [(ngModel)]="textData"
+                     placeholder="Follow markdown to format your code"
+                     >
+                     </textarea>
+                     <markdown ngPreserveWhitespaces [data]="textData">
+                    </markdown>    
+                
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-lg btn-block btn-info" [disabled]="!(answerForm.valid)">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+ 
+       
+</div>

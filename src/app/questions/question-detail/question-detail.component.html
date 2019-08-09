@@ -1,0 +1,14 @@
+
+<div class="card container">
+    <div class="card-body">
+        <h3 class="card-title" > {{ question.questionTitle }}</h3> 
+        <h6 class="card-subtitle mb-2 text-muted float-right">{{ question.questionDate | date }}</h6>    
+        <h6 class="card-subtitle mb-2 text-muted float-right">{{ question.questionUserId  }}</h6>    
+
+        <br><br>    
+        <markdown ngPreserveWhitespaces [data]="textData" class="card-text">
+        </markdown> 
+    </div>
+</div>
+
+<app-answer-list></app-answer-list>

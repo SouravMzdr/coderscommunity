@@ -1,0 +1,56 @@
+<div *ngIf="showLoadingAnimation">
+        <app-loading-animation></app-loading-animation>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col" *ngIf="auth.user$ | async as user">
+            <form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="Question Title"> Question Title </label>
+                    <textarea 
+                    formControlName="questionTitle"
+                    rows="2" 
+                    class="form-control md-textarea form-control"
+                    placeholder="Write the Question Title in Breif"
+                    >
+                    </textarea>
+                    <br>
+                    <label for="Question Description">Write Question Desciption</label>
+                    <textarea type="textarea"
+                     rows="10"
+                     class="form-control md-textarea form-control"
+                     formControlName="questionBody"
+                     [(ngModel)]="textData"
+                     placeholder="Follow markdown to format your code"
+                     >
+                     </textarea>
+                     <markdown ngPreserveWhitespaces [data]="textData">
+                    </markdown>    
+                    <label for="" class="form-label">Please select appropriate tags to categorise your Question</label>
+                    <br>
+                    <div class="form-check form-check-inline"  *ngFor="let control of tagsArray.controls;let i = index;" >
+                        <mdb-checkbox type="text" 
+                        class="form-check-input" 
+                        [formControl]="control" 
+                        type="checkbox" 
+                        id="inlineCheckbox{{i}}"
+                        (change)="getSelectedTagsValue()">
+                        </mdb-checkbox>
+                        <label class="form-check-label" for="inlineCheckbox{{i}}">{{tags[i]}}</label>
+                    </div>
+                </div>
+                <small class="form-text custom-invalid-feedback"
+                *ngIf="tagsError && checkTagsControlTouched()">
+                    Choose at least one Tag
+                </small>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-lg btn-block btn-info" [disabled]="!(questionForm.valid && !tagsError)">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+ 
+       
+</div>
