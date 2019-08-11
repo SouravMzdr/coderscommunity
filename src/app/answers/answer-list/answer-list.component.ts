@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AnswerService } from 'src/app/services/answer.service';
 import { Answer } from 'src/app/model/answer.model';
+import { Comment } from 'src/app/model/comment.model';
+import { CommentService } from 'src/app/services/comment.service';
 
 @Component({
   selector: 'app-answer-list',
@@ -11,7 +13,8 @@ import { Answer } from 'src/app/model/answer.model';
 export class AnswerListComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,
-              private answerService:AnswerService) { }
+              private answerService:AnswerService,
+              private commentService:CommentService) { }
 
   public answerList:Answer[]=[
     {
@@ -22,8 +25,19 @@ export class AnswerListComponent implements OnInit {
     }
   ]
 
+
   id:string
+  currAnswerId:string
   showLoadingAnimation:boolean=true
+
+  public commentList:Comment[]=[
+    {
+      parentId:null,
+      commentBody:null,
+      commentUserId:null,
+      commentDate:null
+    }
+  ]
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -31,20 +45,25 @@ export class AnswerListComponent implements OnInit {
       (actionArray =>{
         this.showLoadingAnimation=false;
         this.answerList = actionArray.map(item =>{
-        const data = item.payload.doc.data() as Answer;
-        return{...data}
-      }); 
+          const currAnswerId = item.payload.doc.id;
+          const data = item.payload.doc.data() as Answer;
+          // this.loadComments(currAnswerId);
+          return{...data}
+        }); 
       })
     )
 
-  //   this.answerService.getAnswer(this.id).subscribe(
-  //     (actionArray =>{
-  //       this.answerList = actionArray.map(item =>{
-  //       const data = item.payload.doc.data() as Answer;
-  //       return{...data}
-  //     }); 
-  //     })
-  //  );
+  }
+
+  loadComments(id:string){
+    this.commentService.getComments(id).subscribe(
+      (actionArray =>{
+        this.commentList = actionArray.map(item => {
+          const commentData = item.payload.doc.data() as Comment;
+          return{...commentData}
+        })
+      })
+    );
   }
 
 }

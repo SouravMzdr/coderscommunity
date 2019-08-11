@@ -1,8 +1,9 @@
-<div class="container" *ngIf = 'signInMessage'>
-    <p>Please Sign in to post new answer</p>
-</div>
 
 <div class="container">
+    <div *ngIf = 'signInMessage'>
+            <p>Please Sign in to post new answer</p>
+    </div>
+
     <div class="row">
         <div class="col" *ngIf="auth.user$ | async as user">
             <form [formGroup]="answerForm" (ngSubmit)="onSubmit()">
@@ -30,6 +31,5 @@
         </div>
 
     </div>
- 
-       
+        
 </div>

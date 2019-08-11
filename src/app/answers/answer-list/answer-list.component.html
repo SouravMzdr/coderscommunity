@@ -4,30 +4,30 @@
 
 <hr>
 
-<ng-container *ngIf='answerList.length==0'>
-        <div class="container">
-                <h4>No answers have yet been posted.</h4>       
-
+<div class="container">
+        <ng-container *ngIf='answerList.length==0'>
+                <div class="container">
+                        <h4>No answers have yet been posted.</h4>       
+        
+                </div>
+        </ng-container>
+        
+        <div class="card"
+        *ngFor ="let answer of answerList">
+        
+            <br>
+                                                
+            <div class="card-body">
+                    <markdown class="card-text" ngPreserveWhitespaces>
+                            {{ answer.answerBody }}
+                    </markdown>
+            </div>
+            <div class="card-footer">
+                    <small  class="float-right">&ensp;{{ answer.answerDate | date }}</small>
+                    <h6> <span  class="float-right">{{ answer.answerUserId  }}</span> </h6>
+            </div>
+     
         </div>
-</ng-container>
-
-<div class="container card"
-*ngFor ="let answer of answerList">
-
-    <br>
-                                        
-    <div class="card-body">
-            <markdown class="card-text" ngPreserveWhitespaces>
-                    {{ answer.answerBody }}
-            </markdown>
-    </div>
-    <div class="card-footer">
-            <small  class="float-right">&ensp;{{ answer.answerDate | date }}</small>
-            <h6> <span  class="float-right">{{ answer.answerUserId  }}</span> </h6>
-    </div>
-    <br>
-    
-    <hr>
+        
+        <app-new-answer></app-new-answer>
 </div>
-
-<app-new-answer></app-new-answer>

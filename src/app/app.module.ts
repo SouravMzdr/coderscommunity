@@ -33,6 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ShortenPipe } from './pipe/shorten.pipe';
 import { FooterComponent } from './footer/footer.component';
+import { NewCommentComponent } from './comments/new-comment/new-comment.component';
+import { CommentListComponent } from './comments/comment-list/comment-list.component';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { FooterComponent } from './footer/footer.component';
     LoadingAnimationComponent,
     QuestionComponent,
     ShortenPipe,
-    FooterComponent
+    FooterComponent,
+    NewCommentComponent,
+    CommentListComponent
   ],
   imports: [
     BrowserModule,

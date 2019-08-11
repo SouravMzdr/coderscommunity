@@ -1,12 +1,13 @@
 
 #intro {
     height: 100vh;
-}
-
-#intro {
+    margin-top: -20px;
+    padding-bottom: 20px;
+    z-index: 10;
     background: url("../../../assets/into.jpg")no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
 }
