@@ -7,4 +7,17 @@ footer{
     padding-top:0.75 ;
     padding-bottom: 0.75 ;
   }
-  
+
+
+@media only screen and (max-width: 768px) {
+    .fb-ic,.tw-ic,.li-ic{
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    footer{
+        display: none;
+    }
+}
+
