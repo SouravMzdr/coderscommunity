@@ -15,6 +15,9 @@
                     placeholder="Write the Question Title in Breif"
                     >
                     </textarea>
+                    <span 
+                        *ngIf="!questionForm.get('questionTitle').valid && questionForm.get('questionTitle').touched"
+                        class="help-block">This field is required<br></span>
                     <br>
                     <label for="Question Description">Write Question Desciption</label>
                     <textarea type="textarea"
@@ -25,8 +28,12 @@
                      placeholder="Follow markdown to format your code"
                      >
                      </textarea>
+                     <span 
+                        *ngIf="!questionForm.get('questionBody').valid && questionForm.get('questionBody').touched"
+                        class="help-block">This field is required<br></span>
                      <markdown ngPreserveWhitespaces [data]="textData">
                     </markdown>    
+                    <br>
                     <label for="" class="form-label">Please select appropriate tags to categorise your Question</label>
                     <br>
                     <div class="form-check form-check-inline"  *ngFor="let control of tagsArray.controls;let i = index;" >
@@ -40,7 +47,7 @@
                         <label class="form-check-label" for="inlineCheckbox{{i}}">{{tags[i]}}</label>
                     </div>
                 </div>
-                <small class="form-text custom-invalid-feedback"
+                <small class="form-text help-block"
                 *ngIf="tagsError && checkTagsControlTouched()">
                     Choose at least one Tag
                 </small>

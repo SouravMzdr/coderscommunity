@@ -4,12 +4,14 @@ import { QuestionListComponent } from './questions/question-list/question-list.c
 import { QuestionDetailComponent } from './questions/question-detail/question-detail.component';
 import { QuestionComponent } from './questions/question/question.component';
 import { AuthGuard } from './services/auth.guard';
+import { ContactComponent } from './contact/contact.component';
 
 const appRoutes: Routes=[
     {path:'',redirectTo:'home',pathMatch:'full'},
     {path:'home',component:QuestionListComponent},
     {path:'home/:id',component:QuestionDetailComponent},
-    {path:'askquestion',component:QuestionComponent , canActivate:[AuthGuard]}
+    {path:'askquestion',component:QuestionComponent , canActivate:[AuthGuard]},
+    {path:'contact',component:ContactComponent,}
 
 
 ]

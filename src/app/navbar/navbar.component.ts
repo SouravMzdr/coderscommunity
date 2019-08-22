@@ -34,6 +34,9 @@ export class NavbarComponent implements OnInit {
     this.route.navigate(['/'])
   }
 
+  goToContact(){
+    this.route.navigate(['/contact'])
+  }
 
   signOut(){
     this.photoUrl=''

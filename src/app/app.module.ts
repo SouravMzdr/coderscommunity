@@ -35,6 +35,7 @@ import { ShortenPipe } from './pipe/shorten.pipe';
 import { FooterComponent } from './footer/footer.component';
 import { NewCommentComponent } from './comments/new-comment/new-comment.component';
 import { CommentListComponent } from './comments/comment-list/comment-list.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { CommentListComponent } from './comments/comment-list/comment-list.compo
     ShortenPipe,
     FooterComponent,
     NewCommentComponent,
-    CommentListComponent
+    CommentListComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { AuthService } from 'src/app/services/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
-import { TestComponentRenderer } from '@angular/core/testing';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -30,10 +29,10 @@ export class NewAnswerComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
 
     this.answerForm = this.fb.group({
-      questionId: new FormControl(null),
+      questionId: new FormControl(null,Validators.required),
       answerBody: new FormControl(null,Validators.required),
-      answerUserId: new FormControl(null),
-      answerDate: new FormControl(null)
+      answerUserId: new FormControl(null,Validators.required),
+      answerDate: new FormControl(null,Validators.required)
     })
     this.auth.user$.subscribe(
       (value) => {

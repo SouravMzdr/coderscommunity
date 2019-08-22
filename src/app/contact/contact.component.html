@@ -1,0 +1,123 @@
+<!--Section: Contact v.2-->
+<section class="mb-5 container">
+
+        <!--Section heading-->
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+        <!--Section description-->
+        <p class="text-center w-responsive mx-auto mb-1">Have any questios or want to suggest any feedbacks? Please submit your query and we will try to response at the earliest.
+        </p>
+    
+        <div class="row">
+    
+            <!--Grid column-->
+            <div class="col-md-9 mb-md-0 mb-5">
+                <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+                    <div class="formGroup">
+                        <!--Grid row-->
+                    <div class="row">
+    
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text"
+                                     id="name"
+                                     name="name"
+                                     class="form-control"
+                                     formControlName="feedbackName"
+                                     placeholder="Your Name">
+                                     <span 
+                                     *ngIf="!feedbackForm.get('feedbackName').valid && feedbackForm.get('feedbackName').touched"
+                                     class="help-block">This field is required</span>
+                                    <!-- <label for="name" class="">Your name</label> -->
+                                </div>
+                            </div>
+                            <!--Grid column-->
+        
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" 
+                                    id="email" 
+                                    name="email" 
+                                    class="form-control"
+                                    formControlName="feedbackEmail"
+                                     placeholder="email">
+                                     <span 
+                                     *ngIf="!feedbackForm.get('feedbackEmail').valid && feedbackForm.get('feedbackEmail').touched"
+                                     class="help-block">Please enter valid email</span>
+                                    <!-- <label for="email" class="">Your email</label> -->
+                                </div>
+                            </div>
+                            <!--Grid column-->
+        
+                        </div>
+                        <!--Grid row-->
+        
+                        <!--Grid row-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="md-form mb-0">
+                                    <input type="text" 
+                                    id="subject" 
+                                    name="subject" 
+                                    class="form-control" 
+                                    formControlName="feedbackSubject"
+                                    placeholder="Subject">
+                                    <span 
+                                     *ngIf="!feedbackForm.get('feedbackSubject').valid && feedbackForm.get('feedbackSubject').touched"
+                                     class="help-block">This field is required</span>
+                                    <!-- <label for="subject" class="">Subject</label> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--Grid row-->
+        
+                        <!--Grid row-->
+                        <div class="row">
+        
+                            <!--Grid column-->
+                            <div class="col-md-12">
+        
+                                <div class="md-form">
+                                    <textarea type="text" 
+                                    id="message" 
+                                    name="message" 
+                                    rows="2" 
+                                    class="form-control md-textarea" 
+                                    formControlName="feedbackMessage"
+                                    placeholder="Your message"></textarea>
+                                    <span 
+                                     *ngIf="!feedbackForm.get('feedbackMessage').valid && feedbackForm.get('feedbackMessage').touched"
+                                     class="help-block">This field is required</span>
+                                    <!-- <label for="message">Your message</label> -->
+                                </div>
+        
+                            </div>
+                        </div>
+                        <!--Grid row-->
+        
+                    </div>
+                    <div class="form-group submit-button">
+                            <button type="submit" class="btn btn-lg btn-block btn-info" [disabled]="!(feedbackForm.valid)">SUBMIT</button>
+                    </div>
+                </form>
+    
+                
+                <div class="status"></div>
+            </div>
+            <!--Grid column-->
+    
+            <!--Grid column-->
+            <div class="col-md-3 text-center">
+                <ul class="list-unstyled mb-5">
+                    <li><i class="fas fa-envelope mb-4 fa-3x"></i>
+                        <p>souravmzdr@gmail.com</p>
+                    </li>
+                </ul>
+            </div>
+            <!--Grid column-->
+    
+        </div>
+    
+    </section>
+    <!--Section: Contact v.2-->
