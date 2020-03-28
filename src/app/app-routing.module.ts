@@ -13,7 +13,11 @@ const appRoutes: Routes=[
     { path: 'home/:id', loadChildren: () => import('./questions/question-detail/question-detail.component').then(m => m.QuestionDetailComponent) },
     {path:'askquestion',component:QuestionComponent , canActivate:[AuthGuard]},
     // {path:'contact',component:ContactComponent,}
-    { path: 'contact', loadChildren: () => import('./contact/contact.component').then(m => m.ContactComponent) },
+    // { path: 'contact', loadChildren: () => import('./contact/contact.component').then(m => m.ContactComponent) },
+    {
+        path: 'contact',
+        loadChildren: './contact/contact.module#ContactModule'
+    }
 
 
 
