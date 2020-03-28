@@ -37,14 +37,15 @@
                     <label for="" class="form-label">Please select appropriate tags to categorise your Question</label>
                     <br>
                     <div class="form-check form-check-inline"  *ngFor="let control of tagsArray.controls;let i = index;" >
-                        <mdb-checkbox type="text" 
+                        <input type="checkbox" 
                         class="form-check-input" 
                         [formControl]="control" 
                         type="checkbox" 
                         id="inlineCheckbox{{i}}"
-                        (change)="getSelectedTagsValue()">
-                        </mdb-checkbox>
-                        <label class="form-check-label" for="inlineCheckbox{{i}}">{{tags[i]}}</label>
+                        (change)="getSelectedTagsValue()" 
+                        >
+                        <!-- </mdb-checkbox> -->
+                        <label class="form-check-label" for="inlineCheckbox{{i}}" >{{tags[i]}}</label>
                     </div>
                 </div>
                 <small class="form-text help-block"
