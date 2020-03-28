@@ -25,7 +25,7 @@ import { LoadingAnimationComponent } from './ui/loading-animation/loading-animat
 // import { ReactiveFormsModule } from '@angular/forms';
 // import { FormsModule } from '@angular/forms';
 
-import { MarkdownModule } from 'ngx-markdown';
+// import { MarkdownModule } from 'ngx-markdown';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -69,7 +69,7 @@ import { AskQuestionModule } from './ask-question/ask-question.module';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    MarkdownModule.forRoot(),
+    // MarkdownModule.forRoot(),
     MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule, 
     ToastrModule.forRoot()
