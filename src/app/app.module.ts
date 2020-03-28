@@ -20,7 +20,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule} from '@angular/fire/auth';
 import { LoadingAnimationComponent } from './ui/loading-animation/loading-animation.component';
-import { QuestionComponent } from './questions/question/question.component';
+// import { QuestionComponent } from './ask-question/question/question.component';
 
 // import { ReactiveFormsModule } from '@angular/forms';
 // import { FormsModule } from '@angular/forms';
@@ -36,6 +36,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NewCommentComponent } from './comments/new-comment/new-comment.component';
 import { CommentListComponent } from './comments/comment-list/comment-list.component';
 import { SharedModule } from './shared/shared.module';
+import { AskQuestionModule } from './ask-question/ask-question.module';
 // import { ContactComponent } from './contact/contact.component';
 // import { ContactModule } from './contact/contact.module';
 
@@ -50,7 +51,7 @@ import { SharedModule } from './shared/shared.module';
     NewAnswerComponent,
     NavbarComponent,
     LoadingAnimationComponent,
-    QuestionComponent,
+    // QuestionComponent,
     ShortenPipe,
     FooterComponent,
     NewCommentComponent,
@@ -60,6 +61,7 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     SharedModule,
+    // AskQuestionModule,
     // ContactModule,
     // ReactiveFormsModule,
     // FormsModule,

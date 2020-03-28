@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from 'src/app/shared/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';

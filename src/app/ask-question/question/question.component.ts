@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, FormArray, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from 'src/app/shared/auth.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { QuestionTagsService } from 'src/app/services/question-tags.service';
 import { ToastrService } from 'ngx-toastr';

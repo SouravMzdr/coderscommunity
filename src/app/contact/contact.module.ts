@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ContactComponent } from './contact.component';
-import { routing } from './contact.routing';
 import { SharedModule } from '../shared/shared.module';
+import { ContactRoutingModule } from './contact.routing';
 
 
 
@@ -10,9 +9,8 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [ContactComponent],
   imports: [
     SharedModule,
-    // CommonModule,
-    routing
+    ContactRoutingModule
   ],
-  exports:[ContactComponent]
+  // exports:[ContactComponent]
 })
 export class ContactModule { }
