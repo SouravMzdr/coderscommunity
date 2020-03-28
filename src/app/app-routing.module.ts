@@ -9,9 +9,12 @@ import { ContactComponent } from './contact/contact.component';
 const appRoutes: Routes=[
     {path:'',redirectTo:'home',pathMatch:'full'},
     {path:'home',component:QuestionListComponent},
-    {path:'home/:id',component:QuestionDetailComponent},
+    // {path:'home/:id',component:QuestionDetailComponent},
+    { path: 'home/:id', loadChildren: () => import('./questions/question-detail/question-detail.component').then(m => m.QuestionDetailComponent) },
     {path:'askquestion',component:QuestionComponent , canActivate:[AuthGuard]},
-    {path:'contact',component:ContactComponent,}
+    // {path:'contact',component:ContactComponent,}
+    { path: 'contact', loadChildren: () => import('./contact/contact.component').then(m => m.ContactComponent) },
+
 
 
 ]

@@ -27,7 +27,7 @@ export class QuestionDetailComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get('id');
     this.questionService.loadQuestion(id).subscribe(
       (doc)=>{
-          this.question = Object.assign({},{...doc})as Question;
+          this.question = Object.assign({},{...(doc as object)})as Question;
           this.textData = this.question.questionBody
       }
     );
