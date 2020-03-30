@@ -36,7 +36,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NewCommentComponent } from './comments/new-comment/new-comment.component';
 import { CommentListComponent } from './comments/comment-list/comment-list.component';
 import { SharedModule } from './shared/shared.module';
-import { AskQuestionModule } from './ask-question/ask-question.module';
+// import { AskQuestionModule } from './ask-question/ask-question.module';
 // import { ContactComponent } from './contact/contact.component';
 // import { ContactModule } from './contact/contact.module';
 
